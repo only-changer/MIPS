@@ -2086,7 +2086,7 @@ bool try_tbp(int x)
 		else return false;
 	}
 }
-int main()
+int main(int agrc,char * agrv[])
 {
 	srand(time(0));
 	r[29] = N;
@@ -2094,7 +2094,7 @@ int main()
 	for (int ii = 0; ii < 120; ++ii) 
 	for (int jj = 0;jj < 16;++jj)
 	tbp[ii][jj] = 2;
-	FILE *stdin1 = fopen("heapsort-5100379110-daibo.s", "r");
+	FILE *stdin1 = fopen(agrv[1], "r");
 	//	FILE *stdin2 = fopen("array_test1-mahaojun.in", "r");
 	char chr[100];
 	while (fscanf(stdin1, "%[^\n]", &chr) != EOF)
@@ -2614,7 +2614,7 @@ int main()
 
 				if (name[t] == 46 && mark != -1)
 				{
-					cout << cnum << ' ' << snum << ' ' << (double(cnum) / snum) * 100 << "%" << endl;
+					//cout << cnum << ' ' << snum << ' ' << (double(cnum) / snum) * 100 << "%" << endl;
 					//	for (int ii = 22; ii <= 37;++ii)
 					//	{
 					//		for (int jj = 0;jj <= 3;++jj) cout<<tbp[ii][jj]<<' ';
