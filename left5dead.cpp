@@ -5,6 +5,7 @@
 #include<map>
 #include<cstdlib>
 #include <thread>
+#include <mutex>
 const int N = 10000000;
 using namespace std;
 vector<string> str;
@@ -146,7 +147,6 @@ int maxx(int x, int y)
 	else
 	{
 		hazard = 2;
-		mark = 0;
 	}
 	return hazard;
 }
@@ -1136,7 +1136,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1; 
 		s = "";
 		for (k = 2; k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		s += ':';
@@ -1158,7 +1158,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1; 
 		s = "";
 		for (k = str.find('$', 0) + 1; str[k] != ',' && k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		if (s[0] >= '0' && s[0] <= '9') key1 = atoi(s.c_str());
@@ -1204,7 +1204,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1;
 		s = "";
 		for (k = str.find('$', 0) + 1; str[k] != ',' && k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		if (s[0] >= '0' && s[0] <= '9') key1 = atoi(s.c_str());
@@ -1250,7 +1250,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1;
 		s = "";
 		for (k = str.find('$', 0) + 1; str[k] != ',' && k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		if (s[0] >= '0' && s[0] <= '9') key1 = atoi(s.c_str());
@@ -1299,7 +1299,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1;
 		s = "";
 		for (k = str.find('$', 0) + 1; str[k] != ',' && k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		if (s[0] >= '0' && s[0] <= '9') key1 = atoi(s.c_str());
@@ -1345,7 +1345,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1;
 		s = "";
 		for (k = str.find('$', 0) + 1; str[k] != ',' && k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		if (s[0] >= '0' && s[0] <= '9') key1 = atoi(s.c_str());
@@ -1391,7 +1391,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1;
 		s = "";
 		for (k = str.find('$', 0) + 1; str[k] != ',' && k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		if (s[0] >= '0' && s[0] <= '9') key1 = atoi(s.c_str());
@@ -1437,7 +1437,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1; 
 		s = "";
 		for (k = str.find('$', 0) + 1; str[k] != ',' && k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		if (s[0] >= '0' && s[0] <= '9') key = atoi(s.c_str());
@@ -1467,7 +1467,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1;
 		s = "";
 		for (k = str.find('$', 0) + 1; str[k] != ',' && k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		if (s[0] >= '0' && s[0] <= '9') key = atoi(s.c_str());
@@ -1497,7 +1497,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1;
 		s = "";
 		for (k = str.find('$', 0) + 1; str[k] != ',' && k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		if (s[0] >= '0' && s[0] <= '9') key = atoi(s.c_str());
@@ -1527,7 +1527,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1; 
 		s = "";
 		for (k = str.find('$', 0) + 1; str[k] != ',' && k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		if (s[0] >= '0' && s[0] <= '9') key = atoi(s.c_str());
@@ -1557,7 +1557,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1; 
 		s = "";
 		for (k = str.find('$', 0) + 1; str[k] != ',' && k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		if (s[0] >= '0' && s[0] <= '9') key = atoi(s.c_str());
@@ -1588,7 +1588,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1;
 		s = "";
 		for (k = str.find('$', 0) + 1; str[k] != ',' && k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		if (s[0] >= '0' && s[0] <= '9') key = atoi(s.c_str());
@@ -1615,7 +1615,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1; 
 		s = "";
 		for (k = 2; k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		s += ':';
@@ -1635,7 +1635,7 @@ private:
 public:
 	void DP(string str)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1; 
 		string s = "";
 		for (k = str.find("jr", 0) + 4; k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		if (s[0] >= '0' && s[0] <= '9') key = atoi(s.c_str());
@@ -1658,7 +1658,7 @@ private:
 public:
 	void DP(string str, int m)
 	{
-		hazard = 1; mark = 0;
+		hazard = 1;
 		s = "";
 		for (k = 4; k < str.size(); ++k) if (str[k] != ' ') s += str[k];
 		s += ':';
@@ -2012,6 +2012,7 @@ public:
 	void MA() {}
 	int WB()
 	{
+		mark = -1;
 		f[2] = 0;
 		f[4] = 0;
 		//cout << r[2] << ' ' << r[4] << endl;
@@ -2316,11 +2317,42 @@ void _WB()
 	}
 	return;
 }
-int main()
+void top()
+{
+	--i;
+	if (i < 0) i += 5;
+	if (hazard != 0)
+	{
+		bool b = true;
+		for (int ii = 0; ii <= 4; ++ii) if (status[ii] == 1) b = false;
+		if (b == true)
+		{
+			i = 4;
+			for (int ii = 0; ii <= 4; ++ii) {
+				status[ii] = 0; s[ii] = ""; name[ii] = 0;
+			}
+			for (int ii = 0; ii <= 33; ++ii) f[ii] = 0;
+			if (hazard == 1)
+			{
+				if (laststone == 1) ++j;
+				laststone = 0;
+			}
+			else --j;
+			while (label[str[j]] != 0)
+				++j;
+			hazard = 0;
+		}
+	}
+	else
+	{
+		++j;
+	}
+}
+int main(int agrc,char *agrv[])
 {
 	r[29] = N;
 	ready();
-	FILE *stdin1 = fopen("heapsort-5100379110-daibo.s", "r");//41.44s
+	FILE *stdin1 = fopen(agrv[1], "r");//41.44s
 															 //	FILE *stdin2 = fopen("array_test1-mahaojun.in", "r");
 	char chr[100];
 	i = -1;
@@ -2334,7 +2366,6 @@ int main()
 		if (s[s.size() - 1] == ':')
 		{
 			label[s] = i;
-
 		}
 		fscanf(stdin1, "\n");
 	}
@@ -2490,71 +2521,18 @@ int main()
 	i = 5;
 	while (true)
 	{
-		--i;
-		if (i < 0) i += 5;
-		if (hazard != 0)
-		{
-			bool b = true;
-			for (int ii = 0; ii <= 4; ++ii) if (status[ii] == 1) b = false;
-			if (b == true)
-			{
-				i = 4;
-				for (int ii = 0; ii <= 4; ++ii) {
-					status[ii] = 0; s[ii] = ""; name[ii] = 0;
-				}
-				for (int ii = 0; ii <= 33; ++ii) f[ii] = 0;
-				if (hazard == 1)
-				{
-					if (laststone == 1) ++j;
-					laststone = 0;
-				}
-				else --j;
-				while (label[str[j]] != 0)
-					++j;
-				hazard = 0;
-			}
-		}
-		else
-		{
-			++j;
-
-		}
-		int j0 = j;
-		for (int k = 4; k >= 0; --k)
-		{
-
-			if (k == 0)
-			{
-				thread t0(_IF);
-				t0.join();
-			}
-			else
-				if (k == 1)
-				{
-					thread t1(_DP);
-					t1.join();
-				}
-				else
-					if (k == 2)
-					{
-						thread t2(_EX);
-						t2.join();
-						//_EX();
-					}
-					else
-						if (k == 3)
-						{
-							thread t3(_MA);
-							t3.join();
-							//_MA();
-						}
-			if (k == 4)
-			{
-				 thread t4(_WB);
-				 t4.join();
-				//_WB();
-				if (name[(i + 4 ) % 5] == 46 && mark != -1) return mark;
-			}
-		}
+		thread t(top);
+		thread t4(_WB);
+		thread t3(_MA);
+		thread t2(_EX);
+		thread t1(_DP);
+		thread t0(_IF);
+		t.join();
+		t4.join();
+		t3.join();
+		t2.join();
+		t1.join();
+		t0.join();
+		if (name[(i + 4 ) % 5] == 46 && mark != -1) return mark;
 	}
 }
